@@ -1,0 +1,104 @@
+<template>
+    <div>
+        <div class="header-login">
+            <div class="header-username">
+                <div class="usericon mr-1">
+                    <i class="fa fa-store"></i>
+                </div>
+                <div class="usernameloc">
+                    <h5 id="user-info-field">Account / Location</h5>
+                </div>
+            </div>
+            <img src="@/assets/images/mosaic-logo.png" />
+            <div class="signout-header">
+                <a class="mt-3" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="fa fa-sign-out-alt"></i>Log out
+                </a>
+                <form id="logout-form" action="" method="GET" style="display: none;"></form>
+            </div>
+        </div>
+        <div class="container h-100 tightscr">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="leftside-content">
+                        <div class="logintime-section">
+                            <h3><span id="hour">00</span><span id="separator">:</span><span id="minute">00</span> <small id="meridiem">am</small></h3>
+                            <h4 class="date-div"></h4>
+                        </div>
+
+                        <div class="welcome-section">
+                            <h1>Welcome to <br>Account, Location</h1>
+                            <p>Please enter your pin to login.</p>
+                            <p class="trouble-p"><b>Having trouble logging in?</b> <br>
+                            Please contact your administrator.</p>
+                        </div>
+
+                        <div class="footercontent-left mt-5">
+                            <span>Powered by <b>Mosaic Solutions</b></span> <br>
+                            <span><b>Mosaic POS Ver. 1.5</b></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="pt-2 pinlogin-wrapper">
+                        <!-- Users -->
+                        <div class="form-group userdrop">
+                            <select class="form-control minimal" id="username" name="username" required>
+                                <option value="">Select a user</option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+
+                        <!-- PIN -->
+                        <div class="">
+                            <input
+                                type="password"
+                                name="password"
+                                class="form-control pinput"
+                                placeholder="Input your PIN"
+                                autocomplete="current-password"
+                                readonly="readonly"
+                                required
+                            />
+                        </div>
+
+                        <table class="pinbuttons-tbl">
+                            <tr>
+                                <td><div class="pinbutton">1</div></td>
+                                <td><div class="pinbutton">2</div></td>
+                                <td><div class="pinbutton">3</div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="pinbutton">4</div></td>
+                                <td><div class="pinbutton">5</div></td>
+                                <td><div class="pinbutton">6</div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="pinbutton">7</div></td>
+                                <td><div class="pinbutton">8</div></td>
+                                <td><div class="pinbutton">9</div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="pinbutton pinsquare">clear</div></td>
+                                <td><div class="pinbutton">0</div></td>
+                                <td>
+                                    <div class="pinbutton pinsquare icon">
+                                        <i class="fa fa-backspace"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="loginbtn">
+                            <button class="btn btn-primary" type="submit" disabled id="passcodeLoginBtn">
+                                <i class="fas fa-spinner fa-spin"></i> Loading
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script setup>
+</script>

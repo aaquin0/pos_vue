@@ -1,0 +1,59 @@
+.footer {
+    background-color: #002340;
+    text-align: center;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    z-index: 10;
+    bottom: 0;
+
+    &.home-screen {
+        padding: 0 8px 0 64px;
+        text-align: unset;
+        align-items: center;
+        justify-content: space-between;
+        height: 48px;
+
+        .left-head {
+            .header-username {
+                position: unset;
+                text-align: unset !important;
+                padding-right: unset;
+                margin-right: unset;
+            }
+        }
+
+        .left-head, .middle-head, .right-head {
+            width: unset !important;
+            height: unset !important;
+            position: unset;
+            padding-bottom: unset;
+            flex: 0 1 auto;
+            margin: 0 0 0 20px;
+        }
+
+        .spacer-head {
+            flex: 1 1 auto;
+        }
+
+        .time-head {
+            position: unset !important;
+            padding-top: 0;
+            color: #f8f9fa;
+        }
+
+        .signout-header {
+            position: unset !important;
+
+            a {
+                color: #f8f9fa;
+                margin-right: 10px;
+
+                &:hover {
+                    color: #fd6666;
+                }
+            }
+        }
+    }
+}

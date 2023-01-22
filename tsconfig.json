@@ -1,0 +1,54 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    //Enable all strict type checking options.
+    //Enabling --strict is equivalent to enabling --noImplicitAny, --noImplicitThis, --alwaysStrict, --strictNullChecks and --strictFunctionTypes and --strictPropertyInitialization.
+    "strict": true,
+    //Allow the compiler to compile JS, JSX files
+    "allowJs": true,
+    //Allow reporting errors in JS files, usually used with allowJS
+    "checkJs": false,
+    //jsx is allowed
+    "jsx": "preserve",
+    "declaration": true,
+    //remove annotation
+    "removeComments": true,
+    //can not ignore any
+    "noImplicitAny": true,
+    //Turn off the this type annotation hint
+    "noImplicitThis": true,
+    //null/undefined cannot be a subtype of other types:
+    //let a = null; //An error will be reported here.
+    "strictNullChecks": true,
+    //Generate mapping code for enumeration
+    "preserveConstEnums": true,
+    //Root directory
+    //output directory
+    "outDir": "./ts-out-dir",
+    //Whether to output the src2.js.map file
+    "sourceMap": false,
+    //Variable is defined but not used
+    "noUnusedLocals": false,
+    //Whether to allow parsing json files as modules
+    "resolveJsonModule": true,
+    //Like noUnusedLocals, for func
+    "noUnusedParameters": false,
+    //Module parsing strategy, ts defaults to node's parsing strategy, that is, relative import
+    "moduleResolution": "node",
+    //Allow export=export, imported by import from
+    "esModuleInterop": true,
+    //Type checking of all declaration files ( *.d.ts ) is ignored.
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    //Specifies the default read directory
+    //"typeRoots": ["./node_modules/@types/", "./types"],
+    "lib": ["ES2018", "DOM"]
+  },
+  //"files": [],
+  //The include folder will be read by ts
+  "include": ["src", "typings"]
+}

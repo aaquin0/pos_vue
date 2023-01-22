@@ -1,0 +1,49 @@
+.formulate-input .formulate-input-label {
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    margin-bottom: 0.5em !important;
+}
+
+.formulate-input[data-classification=button] {
+    button {
+        background-color: $blue-dark !important;
+        border: 1px solid $blue-dark !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+    }
+
+    &:active {
+        background-color: $blue !important;
+        border: 1px solid $blue !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;;
+    }
+
+    &:disabled {
+        background-color: $gray-light !important;
+        border: 1px solid $gray-light !important;
+        cursor: not-allowed;
+    }
+}
+
+.formulate-input[data-classification=select] select,
+.formulate-input[data-classification=text] input,
+.formulate-input[data-classification=search] input {
+    background-color: $white !important; //F8F8F8
+    border: 1px solid $gray-light !important; //AFAFAF
+    height: 40px;
+}
+
+.formulate-input[data-classification=select] select {
+    padding: .25em .75em !important;
+}
+
+.formulate-input[data-classification=text] .formulate-input-element--search {
+    &:before {
+        display: none;
+    }
+
+    input {
+        padding-left: 10px !important;
+    }
+}

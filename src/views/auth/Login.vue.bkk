@@ -1,0 +1,590 @@
+<template>
+  <div>
+    <div class="header-login">
+      <img src="@/assets/images/mosaic-logo.png"/>
+    </div>
+    <div class="container h-100 mt-5 pt-3">
+      <div class="row">
+        <div class="col-lg-6 position-relative">
+          <div class="pt-lg-5 pr-lg-4 pl-lg-4 mx-5 left-mainlog">
+            <div class="logintime-section">
+              <h3>
+                <span>{{hour}}</span>
+                <span>:</span>
+                <span>{{ minute }} </span>
+                <small>{{meridiem}}</small>
+              </h3>
+              <h4 class="date-div"></h4>
+            </div>
+
+            <div class="welcome-section">
+              <h1>Mosaic POS</h1>
+              <p>Please enter your credentials to login.</p>
+              <p class="trouble-p"><b>Having trouble logging in?</b> <br>
+                Please contact your administrator.</p>
+            </div>
+            <div class="footercontent-left">
+              <span><b>Mosaic POS Ver. {{pos_version}}</b></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <!-- Session Status -->
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Login",
+
+  data() {
+    return {
+      pos_version: 0,
+      hour: '00',
+      minute: '00',
+      meridiem: 'am'
+    }
+  },
+
+  mounted() {
+    this.pos_version = import.meta.env.VITE_APP_POS_VERSION
+  },
+
+  methods: {
+
+  }
+}
+</script>
+
+<style scoped>
+body {
+  font-family: "Oxygen", sans-serif !important;
+  background-color: #eef1f4 !important;
+}
+
+p,
+a,
+span {
+  font-family: "Roboto", sans-serif !important;
+}
+
+#separator {
+  -webkit-animation: fade_in_out 1s infinite alternate;
+  animation: fade_in_out 1s infinite alternate;
+}
+
+@-webkit-keyframes fade_in_out {
+  0% {
+    color: #1b75bb;
+  }
+  100% {
+    color: rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes fade_in_out {
+  0% {
+    color: #1b75bb;
+  }
+  100% {
+    color: rgba(0, 0, 0, 0);
+  }
+}
+#main-login-form {
+  margin-top: 6.5rem;
+  margin-right: 4rem;
+  width: 73%;
+}
+
+@media (max-width: 768px) {
+  .container.tightscr {
+    width: 100% !important;
+    max-width: 100%;
+  }
+  #main-login-form {
+    width: 100%;
+  }
+}
+@media (max-width: 540px) {
+  #main-login-form {
+    margin: 0 !important;
+  }
+}
+.btn.btn-prim {
+  color: #fff;
+  background-color: #1b75bb;
+  border: #1b75bb;
+  padding: 15px 35px;
+  border-radius: 10px;
+  width: 100%;
+  font-weight: bold;
+  font-family: "Oxygen", sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+  box-shadow: -1px 2px 2px #134871eb
+}
+
+.btn.btn-prim:hover, .btn.btn-prim:focus {
+  background-color: #135a96;
+  color: #fff;
+}
+
+.header-login {
+  background-color: #fff !important;
+  text-align: center !important;
+  padding: 13px !important;
+  border-bottom: 2px solid #dbdbdb !important;
+  position: relative;
+}
+
+.signout-header {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+}
+
+.signout-header i {
+  margin-right: 7px;
+}
+
+.signout-header a {
+  color: #fd6666;
+}
+
+.header-username {
+  position: absolute;
+  left: 20px;
+  top: 14px;
+  padding-right: 10px;
+}
+
+.header-username .usericon {
+  display: inline-block;
+  width: 30px;
+  vertical-align: middle;
+  background-color: #E3E3E3;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.header-username .usericon i {
+  color: #1B75BB;
+  padding-top: 7px;
+}
+
+.header-username .usernameloc {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.header-username .usernameloc h5 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #1b75bb;
+}
+
+.header-username .usernameloc p {
+  margin: 0;
+  font-size: 13px;
+  color: #4C5B67;
+}
+
+.wrapper-login {
+  margin: 0px 50px;
+  padding: 0;
+}
+
+/*main login section*/
+.mainlogbox .form-group {
+  position: relative;
+}
+.mainlogbox .form-group i {
+  position: absolute;
+  top: 30%;
+  left: 2%;
+  color: #1b75bb;
+}
+.mainlogbox .form-group input {
+  padding-left: 35px;
+}
+
+@media (max-width: 1024px) {
+  .wrapper-login {
+    margin: 20px 50px;
+  }
+}
+@media (max-width: 525px) {
+  .wrapper-login {
+    margin: 30px 20px 0px 20px;
+  }
+
+  .header-username .usernameloc {
+    display: none;
+  }
+}
+@media (max-width: 320px) {
+  .signout-header {
+    right: 10px;
+  }
+
+  .signout-header a {
+    font-size: 12px;
+  }
+
+  .header-login {
+    padding: 5px !important;
+  }
+}
+.leftside-content {
+  margin: 65px 0px 0px 210px;
+}
+
+.logintime-section,
+.welcome-section,
+.homenav-opt {
+  margin-bottom: 25px;
+}
+
+.logintime-section h3 {
+  font-size: 5rem;
+  color: #1b75bb;
+  font-weight: 600;
+}
+
+.logintime-section h3 > small {
+  font-weight: 600;
+}
+
+.logintime-section h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #494a4a;
+}
+
+.welcome-section h1 {
+  color: #000;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.welcome-section p {
+  color: #4d4d4d;
+  font-size: 20px;
+}
+
+.welcome-section .trouble-p {
+  color: #878787;
+  font-size: 14px;
+}
+
+.homenav-opt a:first-child {
+  border-left: 1px solid #dbdbdb;
+}
+
+.homenav-opt a {
+  color: #484848;
+  font-weight: 500;
+  padding-bottom: 15px;
+  margin-top: 10px;
+  display: inline-block;
+  width: 32%;
+  height: 65px;
+  vertical-align: bottom;
+  text-align: center;
+  font-size: 13px;
+  padding-top: 6px;
+  border-right: 1px solid #dbdbdb;
+  margin: 0;
+}
+
+.homenav-opt a > i {
+  color: #88aecb;
+  margin-right: 10px;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.footercontent-left span {
+  font-size: 14px;
+}
+
+.footercontent-left span > b {
+  color: #1b75bb;
+}
+
+.left-mainlog {
+  position: absolute;
+  right: 8%;
+}
+
+/*pin input section*/
+.err-custom {
+  color: #fff;
+  background-color: #F47070;
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 7px;
+}
+.err-custom ul li {
+  list-style: none;
+}
+.err-custom ul {
+  padding: 0; margin: 0;
+}
+
+.form-control.err-sty {
+  border: 1px solid #f33434;
+}
+
+.pinlogin-wrapper.err-sty {
+  margin-top: 0;
+}
+
+.pinlogin-wrapper {
+  margin: 25px 0px 0px 50px;
+  width: 370px;
+  position: relative;
+  transform: scale(0.9);
+}
+
+.pinlogin-wrapper .pinput {
+  padding: 15px;
+  border-radius: 7px;
+  text-shadow: 0px 0px 1px #fff;
+  caret-color: transparent;
+  text-align: center !important;
+  font-family: "Roboto", sans-serif;
+  height: 50px;
+  margin-bottom: 15px;
+  position: relative;
+  background-color: #fff!important;
+}
+
+.pinput[type="password"]{
+  -webkit-text-security: circle;
+  font-size: 4rem;
+}
+
+.pinlogin-wrapper .pinput::-moz-placeholder {
+  padding: 0;
+  margin: 0;
+  top: 0;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-family: "Oxygen", sans-serif;
+  font-size: 1rem;
+  color: #4a5059;
+}
+
+.pinlogin-wrapper .pinput:-ms-input-placeholder {
+  padding: 0;
+  margin: 0;
+  top: 0;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-family: "Oxygen", sans-serif;
+  font-size: 1.2rem;
+  color: #4a5059;
+}
+
+.pinlogin-wrapper .pinput::placeholder {
+  padding: 0;
+  margin: 0;
+  top: 0;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-family: "Oxygen", sans-serif;
+  font-size: 1.2rem;
+  color: #4a5059;
+}
+
+.pinlogin-wrapper .userdrop select {
+  font-size: 1.2rem;
+  text-align: center;
+  height: 50px !important;
+  border-radius: 7px;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.pinlogin-wrapper .userdrop select.minimal {
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+.pinlogin-wrapper .userdrop select.minimal:focus {
+  background-image: linear-gradient(45deg, green 50%, transparent 50%), linear-gradient(135deg, transparent 50%, green 50%), linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: green;
+  outline: 0;
+}
+
+.pinlogin-wrapper .userdrop select option[selected=selected] {
+  text-align: center;
+}
+
+/*.pinlogin-wrapper .alert {
+    font-size: 12px;
+    position: absolute;
+    width: 100%;
+    top: -30px;
+    left: -4px;
+    padding: 5px 15px;
+}*/
+.pinbuttons-tbl {
+  width: 100% !important;
+}
+
+.pinbuttons-tbl tr td {
+  width: 33.33% !important;
+}
+
+.pinbuttons-tbl .pinbutton {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  text-align: center !important;
+  margin: 0 auto;
+  font-size: 2.5rem;
+  color: #1b75bb;
+  padding-top: 10px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.pinbuttons-tbl .pinsquare {
+  width: 85px;
+  height: 85px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  text-align: center !important;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  color: #f33434;
+  padding-top: 23px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.pinbutton:hover, .pinbutton:active {
+  background-color: #36c6f4;
+  color: #fff;
+}
+
+.pinbuttons-tbl .pinsquare i {
+  font-size: 2.5rem;
+}
+
+.loginbtn {
+  margin-top: 12px;
+}
+
+.loginbtn .btn {
+  width: 100%;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 12px 0px;
+  font-size: 1.5rem;
+  background-color: #1b75bb;
+  border: #1b75bb;
+  box-shadow: -1px 2px 2px #134871eb
+}
+/*media queries*/
+@media (max-width: 1044px) {
+  .pinlogin-wrapper {
+    margin: 25px 0px 0px 0px;
+  }
+}
+@media (max-width: 1024px) {
+  .pinbuttons-tbl .pinbutton {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .pinlogin-wrapper .form-group {
+    margin-bottom: 10px;
+  }
+  .leftside-content {
+    margin: 60px 0px 0px 100px;
+  }
+
+  .logintime-section h3 {
+    font-size: 4rem;
+  }
+
+  .welcome-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .welcome-section p {
+    font-size: 15px;
+  }
+
+  .homenav-opt a {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pinlogin-wrapper {
+    width: 300px;
+  }
+
+  .pinbuttons-tbl .pinbutton, .pinbuttons-tbl .pinsquare {
+    width: 80px;
+    height: 80px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media (max-width: 800px) {
+  .pinlogin-wrapper {
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 20px;
+  }
+  .logintime-section, .welcome-section, .leftside-content {
+    display: none;
+  }
+  #main-login-form {
+    width: 100%;
+  }
+}
+@media (max-width: 525px) {
+  .leftside-content {
+    margin: 20px;
+  }
+}
+@media (max-width: 320px) {
+  .pinlogin-wrapper {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+</style>

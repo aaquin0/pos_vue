@@ -1,0 +1,46 @@
+.table {
+    &>thead>tr{
+        background-color: #053B66;
+        color: white;
+    }
+
+    &>tbody>tr {
+        &>td,>th {
+            background-color: #EFF8FF;
+        }
+
+        &>td {
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 15px;
+        }
+    }
+
+    thead th {
+        text-align: center;
+        font-size: 14px;
+    }
+}
+
+label {
+    //font-family: 'Oxygen', sans-serif !important;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.excel-btn {
+    float: right;
+    padding-top: 35px;
+}
+
+.row.stripped-dashed {
+    &-top {
+        border-top: 1px dashed;
+        margin-top: 20px;
+    }
+
+    &-bottom {
+        border-bottom: 1px dashed;
+        padding-bottom: 20px;
+    }
+}
