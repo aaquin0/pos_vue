@@ -5,8 +5,6 @@
 </template>
 
 <script setup>
-import { setToken } from '@/utils/auth'
-
 onMounted(() => {
     window.addEventListener('offline', () => {
         console.log('offline')
