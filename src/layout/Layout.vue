@@ -17,7 +17,7 @@
       />
     </div>
 
-    <div class="main-container">
+    <div class="wrapper">
       <Modal ref="modal" />
       <router-view />
     </div>
@@ -157,7 +157,8 @@ const destroySession = () => {
     opacity: 0.5;
     z-index: 900;
 }
-.main-container {
+.wrapper {
     padding: 5px 20px 5px 90px;
+    background-color: #edf0f3;
 }
 </style>

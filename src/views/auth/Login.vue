@@ -241,6 +241,7 @@ const handleLoginCashier = () => {
     // for testing only
     setToken('1234')
     router.push({ path: state.redirect || '/', query: state.otherQuery })
+    location.reload()
     // ---
 }
 

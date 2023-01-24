@@ -43,7 +43,7 @@ export const asyncRoutes = [
     {
         path: "/",
         component: Layout,
-        redirect: '/account/test1',
+        redirect: '/dine-in',
         icon: "table",
         meta: {
             roles: ['editor']
@@ -52,6 +52,44 @@ export const asyncRoutes = [
             {
                 path: "dine-in",
                 name: "DINE-IN",
+                component: () => import('@/views/account/test1.vue'),
+                meta: {
+                    roles: ['editor']
+                }
+            }
+        ]
+    },
+    {
+        path: "/",
+        component: Layout,
+        redirect: '/services/pending',
+        icon: "clock",
+        meta: {
+            roles: ['editor']
+        },
+        children: [
+            {
+                path: "services/pending",
+                name: "PENDING",
+                component: () => import('@/views/account/test1.vue'),
+                meta: {
+                    roles: ['editor']
+                }
+            }
+        ]
+    },
+    {
+        path: "/",
+        component: Layout,
+        redirect: '/settings/bill',
+        icon: "cog",
+        meta: {
+            roles: ['editor']
+        },
+        children: [
+            {
+                path: "settings/bill",
+                name: "SETTINGS",
                 component: () => import('@/views/account/test1.vue'),
                 meta: {
                     roles: ['editor']

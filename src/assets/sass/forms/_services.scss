@@ -1,0 +1,41 @@
+.service-box {
+    background-color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px 15px 15px 15px;
+    height: 220px;
+    position: relative;
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+    cursor: pointer;
+
+    svg {
+        padding: 10px;
+        border-radius: 10px;
+
+        g {
+            fill: #1b75bb;
+        }
+    }
+
+    &:hover {
+        background-color: #1b75bb;
+
+        h4 {
+            color: #fff;
+        }
+
+        svg path  {
+            fill: #fff;
+        }
+    }
+}
+
+.service-box-bottom {
+    margin-top: 20px;
+
+    h4 {
+        font-weight: bold;
+        color: #1b75bb;
+        font-size: 1.5rem;
+    }
+}
