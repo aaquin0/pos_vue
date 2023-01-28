@@ -45,7 +45,9 @@ export default ({ command, mode }) => {
             vueJsx(),
             viteSvgIcons({
                 // config svg dir that can config multi
-                iconDirs: [], //[path.resolve(process.cwd(), 'path/to/dir')],
+                iconDirs: [
+                    path.resolve(process.cwd(), 'src/icons/svg')
+                ], //[path.resolve(process.cwd(), 'path/to/dir')],
                 // appoint svg icon using mode
                 symbolId: 'icon-[dir]-[name]'
             }),

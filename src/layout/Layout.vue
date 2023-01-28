@@ -82,19 +82,9 @@ routes.value.map(route => {
 
 function updateObjectArr(obj, parentPath = '') {
     obj.href = parentPath.replace('//','/')
-
     if (obj.children) {
-        let path = ''
-
-        if (obj.href==='') {
-            path += obj.path
-        } else {
-            path += obj.href
-        }
-
-        obj.children.forEach(child => updateObjectArr(child, `${path}/${child.path}`))
-
-        obj.href = ''
+        obj.children.forEach(child => updateObjectArr(child, `${(obj.href==='' ? obj.path : obj.href)}/${child.path}`))
+        //obj.href = ''
     }
 
     delete obj.component

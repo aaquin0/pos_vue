@@ -64,36 +64,67 @@ export const asyncRoutes = [
         component: Layout,
         redirect: '/services/pending',
         icon: "clock",
-        meta: {
-            roles: ['editor']
-        },
         children: [
             {
                 path: "services/pending",
                 name: "PENDING",
                 component: () => import('@/views/account/test1.vue'),
-                meta: {
-                    roles: ['editor']
-                }
             }
         ]
     },
     {
         path: "/",
         component: Layout,
-        redirect: '/settings/bill',
+        redirect: "/settings",
         icon: "cog",
-        meta: {
-            roles: ['editor']
-        },
         children: [
             {
-                path: "settings/bill",
+                path: "settings",
                 name: "SETTINGS",
-                component: () => import('@/views/account/test1.vue'),
-                meta: {
-                    roles: ['editor']
-                }
+                redirect: "/settings/bill",
+                component: () => import('@/views/settings/index.vue'),
+                children: [
+                    {
+                        path: "day-end",
+                        name: "Day End",
+                        component: () => import('@/views/settings/DayEnd.vue')
+                    },
+                    {
+                        path: "shift-change",
+                        name: "Shift Change",
+                        component: () => import('@/views/settings/ShiftChange.vue')
+                    },
+                    {
+                        path: "printer",
+                        name: "Printer Settings",
+                        component: () => import('@/views/settings/PrinterSettings.vue')
+                    },
+                    {
+                        path: "items",
+                        name: "Items",
+                        component: () => import('@/views/settings/Items.vue')
+                    },
+                    {
+                        path: "tables",
+                        name: "Tables",
+                        component: () => import('@/views/settings/Tables.vue')
+                    },
+                    {
+                        path: "reports",
+                        name: "Reports",
+                        component: () => import('@/views/settings/Reports.vue')
+                    },
+                    {
+                        path: "bill",
+                        name: "Bill",
+                        component: () => import('@/views/settings/Bill.vue')
+                    },
+                    {
+                        path: "imin",
+                        name: "IMIN Settings",
+                        component: () => import('@/views/settings/IminSettings.vue')
+                    }
+                ]
             }
         ]
     },

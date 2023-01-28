@@ -1,9 +1,10 @@
 .service-box {
-    background-color: #fff;
+    background-color: $white;
     text-align: center;
     border-radius: 10px;
     padding: 30px 15px 15px 15px;
-    height: 220px;
+    min-width: 19.5em;
+    height: 14em;
     position: relative;
     box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
     cursor: pointer;
@@ -13,29 +14,103 @@
         border-radius: 10px;
 
         g {
-            fill: #1b75bb;
+            fill: $blue-dark;
         }
     }
 
     &:hover {
-        background-color: #1b75bb;
+        background-color: $blue-dark;
 
         h4 {
             color: #fff;
         }
 
-        svg path  {
-            fill: #fff;
+        svg use  {
+            fill: $white;
+            stroke: $white;
+            stroke-width: 2;
         }
     }
 }
 
+.router-link-active {
+    .service-box {
+        background-color: $blue-dark;
+
+        h4 {
+            color: #fff;
+        }
+
+        svg use  {
+            fill: $white;
+            stroke: $white;
+            stroke-width: 2;
+        }
+    }
+
+}
+
 .service-box-bottom {
-    margin-top: 20px;
+    margin-top: 15px;
 
     h4 {
         font-weight: bold;
-        color: #1b75bb;
+        color: $blue-dark;
         font-size: 1.5rem;
+    }
+}
+
+.initial-page {
+    margin:20px 10px!important;
+
+    .service-box {
+        height: 15em;
+        padding: 20px 12px 12px 12px;
+
+        .svg-icon {
+            width: 8em !important;
+            height: 8em !important;
+        }
+
+        &:hover {
+            svg use  {
+                stroke-width: 0 !important;
+            }
+        }
+    }
+}
+
+/* Extra Large (lg) and up */
+@media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+    .initial-page {
+        .service-box {
+            min-width: 12em;
+
+            .svg-icon {
+                width: 7em !important;
+                height: 7em !important;
+            }
+        }
+
+        .service-box-bottom {
+            h4 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+/* Extra Large (xl) and up */
+@media (min-width: $breakpoint-xl) and (max-width: $breakpoint-xxl) {
+    .service-box {
+        min-width: 10em;
+    }
+
+    .service-box-bottom {
+        margin-top: 12px;
+
+        h4 {
+            font-size: 1.2rem;
+        }
     }
 }
