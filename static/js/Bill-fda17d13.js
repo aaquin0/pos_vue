@@ -1,0 +1,1 @@
+import{_ as a,h as s,i as l,G as o,E as e,c as n,a as t}from"./index-732f335f.js";const c={name:"Bill"},r=t("Bill");const f=a(c,[["render",function(a,t,c,f,u,d){const i=s("BCol"),B=s("BRow");return l(),o(B,null,{default:e((()=>[n(i,{cols:"12",style:{"background-color":"#2ecc71"}},{default:e((()=>[r])),_:1})])),_:1})}]]);export{f as default};
